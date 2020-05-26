@@ -1,40 +1,14 @@
+//jshint esversion:6
 const express=require('express');
-const bodyParser=require('body-parser');
-const cors=require('cors');
-const port=3000;
 const app=express();
-app.use(bodyParser.json())
-app.use(cors());
 app.get('/',function(req,res){
-  res.send(`
-    <head>
-    <meta charset="utf-8">
-    <title>Express Server</title>
-    <style>
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background: #1a1919;
-            text-align:center;
-            color: #fff;
-            font-size:50px;
-        }
-    </style>
-    </head>
-    <body>
-    <div class="container"><h1>Hello World!</h1></div>
-    </body>
-
-    `);
+  res.send("<h1>Hello, World!</h1>");
 })
-app.post('/enroll',function(req,res)
+app.post('/contact',function(req,res)
 {
-  console.log(req.body);
-  res.status(200).send({"message":"data received"});
+  res.send("contact @ f20180551@hyderabad.bits-pilani.ac.in");
 })
-app.listen(port,function(){
-  console.log('Express Server Listening on port:'+port);
+app.listen(5000,function(){
+  console.log('Server started on port: 5000');
 })
-var startChrome = require("start-chrome");
-startChrome("http://localhost:3000");
+
